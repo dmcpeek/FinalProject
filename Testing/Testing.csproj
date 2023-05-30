@@ -5,6 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Views\Shared\icons\**" />
+    <Content Remove="Views\Shared\icons\**" />
+    <EmbeddedResource Remove="Views\Shared\icons\**" />
+    <None Remove="Views\Shared\icons\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Dapper" Version="2.0.123" />
     <PackageReference Include="MySql.Data" Version="8.0.33" />
   </ItemGroup>
