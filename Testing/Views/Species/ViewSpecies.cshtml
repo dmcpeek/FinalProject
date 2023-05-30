@@ -1,0 +1,36 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model Species
+
+<h3>@Model.SpeciesName Information</h3>
+
+<table class="table">
+    <tr>
+        <th>Species ID</th>
+        <th>Species Name</th>
+        <th>Pronunciation</th>
+        <th>Genus ID</th>
+        <th>Meaning</th>
+    </tr>
+    <tr>
+        <td>@Model.SpeciesID</td>
+        <td>@Model.SpeciesName</td>
+        <td>@Model.Pronunciation</td>
+        <td>@Model.GenusID</td>
+        <td>@Model.Meaning</td>
+    </tr>
+</table>
+
+<div style="display: block">
+    <a href="/Species/UpdateSpecies/@Model.SpeciesID">Update this Species</a>
+</div>
+
+<div style="display: block">
+
+    @using (Html.BeginForm("DeleteSpecies", "Species", "Post"))
+    {
+        <input type="hidden" asp-for="SpeciesID" value="@Model.SpeciesID" />
+        <input type="submit" onclick="return confirm('Are you sure?')" value="Delete this species" />
+    }
+</div>

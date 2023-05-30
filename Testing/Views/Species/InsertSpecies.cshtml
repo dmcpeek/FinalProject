@@ -1,0 +1,32 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model Species
+
+<h2>Add a New Species</h2>
+
+@using (Html.BeginForm("InsertSpeciesToDatabase", "Species", "Post"))
+{
+    <input asp-for="SpeciesID" type="hidden" value="" />
+
+    <label asp-for="SpeciesName" class="control-label">Species Name</label>
+    <input type="text" name="SpeciesName" class="form-control" value="" />
+
+    <label asp-for="Pronunciation" class="control-label">Pronunciation</label>
+    <input type="text" name="Pronunciation" class="form-control" />
+
+    <label asp-for="Meaning" class="control-label">Meaning</label>
+    <input type="text" name="Meaning" class="form-control" />
+
+    <div class="form-group">
+        <label for="">Select a Genus</label>
+        <select class="form-control" name="GenusID" value="">
+            @foreach (var gen in Model.Genus)
+            {
+                <option value="@gen.GenusID">@gen.GenusID @gen.GenusName</option>
+            }
+        </select>
+    </div>
+
+    <input type="submit" value="Add Species" class="btn btn-primary" />
+}

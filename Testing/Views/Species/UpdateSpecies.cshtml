@@ -1,0 +1,22 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model Species
+
+<h2>Update @Model.SpeciesName</h2>
+
+@using (Html.BeginForm("UpdateSpeciesToDatabase", "Species", "Post"))
+{
+    <input asp-for="SpeciesID" type="hidden" value="@Model.SpeciesID" />
+
+    <label asp-for="SpeciesName" class="control-label">Species Name</label>
+    <input type="text" name="SpeciesName" class="form-control" value="@Model.SpeciesName" />
+
+    <label asp-for="Pronunciation" class="control-label">Pronunciation</label>
+    <input type="text" name="Pronunciation" class="form-control" value="@Model.Pronunciation" />
+
+    <label asp-for="Meaning" class="control-label">Meaning</label>
+    <input type="text" name="Meaning" class="form-control" value="@Model.Meaning" />
+
+    <input type="submit" value="Update Species" class="btn btn-primary" />
+}

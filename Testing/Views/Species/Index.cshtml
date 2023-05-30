@@ -1,0 +1,34 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model IEnumerable<Species>
+
+<h2>Species</h2>
+
+<div style="display: block">
+    <a href="/Species/InsertSpecies/">Add a New Species</a>
+</div>
+
+<table class="table">
+    <tr>
+        <th>Species ID</th>
+        <th>Species Name</th>
+        <th>Pronunciation</th>
+        <th>Meaning</th>
+        <th>Genus ID</th>
+
+    </tr>
+
+    @foreach (var species in @Model)
+    {
+        <tr>
+            <td><a href=/Species/ViewSpecies/@species.SpeciesID>@species.SpeciesID</a></td>
+            <td>@species.SpeciesName</td>
+            <td>@species.Pronunciation</td>
+            <td>@species.Meaning</td>
+            <td>@species.GenusID</td>
+
+        </tr>
+    }
+
+</table>
