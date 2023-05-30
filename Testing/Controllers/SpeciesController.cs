@@ -19,12 +19,17 @@ namespace Testing.Controllers
         public IActionResult Index()
         {
             var species = repo.GetAllSpecies();
+            foreach (var speciesItem in species)
+            {
+                speciesItem.GenusNames = repo.PickGenusName();
+            }
             return View(species);
         }
 
         public IActionResult ViewSpecies(int id)
         {
             var species = repo.GetSpecies(id);
+            species.GenusNames = repo.PickGenusName();
             return View(species);
         }
 

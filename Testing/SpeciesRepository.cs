@@ -27,6 +27,7 @@ namespace Testing
         {
             _conn.Execute("UPDATE species SET SpeciesName = @name, Pronunciation = @pronunciation, Meaning = @meaning WHERE SpeciesID = @id",
              new { name = species.SpeciesName, pronunciation = species.Pronunciation, meaning = species.Meaning, id = species.SpeciesID });
+
         }
 
         public void InsertSpecies(Species speciesToInsert)
@@ -55,5 +56,15 @@ namespace Testing
             _conn.Execute("DELETE FROM image WHERE SpeciesID = @id;", new { id = species.SpeciesID });
         }
 
+        public Dictionary<int, string> PickGenusName()
+        {
+            var genusType = GetGenus();
+            var res = new Dictionary<int, string>();
+            foreach (Genus g in genusType)
+            {
+                res.Add(g.GenusID, g.GenusName);
+            }
+            return res;
+        }
     }
 }

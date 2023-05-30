@@ -13,7 +13,7 @@
         <th>Species Name</th>
         <th>Pronunciation</th>
         <th>Meaning</th>
-        <th>Genus ID</th>
+        <th>Genus</th>
     </tr>
     <tr>
         <!-- <th>Genus ID</th>, Show static GenusName -->
@@ -22,7 +22,7 @@
         <td>@Model.SpeciesName</td>
         <td>@Model.Pronunciation</td>
         <td>@Model.Meaning</td>
-        <td>@Model.GenusID</td>
+        <td>@Model.GenusNames[Model.GenusID]</td>
     </tr>
 </table>
 

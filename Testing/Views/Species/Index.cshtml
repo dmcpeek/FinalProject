@@ -10,24 +10,20 @@
 </div>
 
 <table class="table">
-    <tr>
-        <th>Species ID</th>
+    <tr>        
         <th>Species Name</th>
         <th>Pronunciation</th>
         <th>Meaning</th>
-        <th>Genus ID</th>
-
+        <th>Genus</th>
     </tr>
 
     @foreach (var species in @Model)
     {
         <tr>
-            <td><a href=/Species/ViewSpecies/@species.SpeciesID>@species.SpeciesID</a></td>
-            <td>@species.SpeciesName</td>
+            <td><a href=/Species/ViewSpecies/@species.SpeciesID>@species.SpeciesName</a></td>
             <td>@species.Pronunciation</td>
             <td>@species.Meaning</td>
-            <td>@species.GenusID</td>
-
+            <td>@species.GenusNames[@species.GenusID]</td>            
         </tr>
     }
 

@@ -13,5 +13,6 @@ namespace Testing
         public IEnumerable<Genus> GetGenus();
         public Species AssignGenus();
         public void DeleteSpecies(Species species);
+        public Dictionary<int, string> PickGenusName();
     }
 }

@@ -14,5 +14,6 @@ namespace Testing.Models
         public int GenusID { get; set; }
         public string Meaning { get; set; }
         public IEnumerable<Genus> Genus { get; set; }
+        public Dictionary<int,string> GenusNames { get; set; }
     }
 }
