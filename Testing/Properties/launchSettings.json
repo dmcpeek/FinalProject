@@ -1,14 +1,14 @@
 ﻿{
   "iisSettings": {
-    "windowsAuthentication": false, 
-    "anonymousAuthentication": true, 
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
     "iisExpress": {
       "applicationUrl": "http://localhost:63431",
       "sslPort": 44387
     }
   },
   "profiles": {
-    "IIS Express": {
+    "Orchid Database": {
       "commandName": "IISExpress",
       "launchBrowser": true,
       "environmentVariables": {

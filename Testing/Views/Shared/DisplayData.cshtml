@@ -1,0 +1,35 @@
+﻿@model List<dynamic>
+
+<table>
+    <thead>
+        <tr>
+            <th>Genus Name</th>
+            <th>Genus Pronunciation</th>
+            <th>Species Name</th>
+            <th>Species Pronunciation</th>
+            <th>Species Name Meaning</th>
+            <th>Taxonomist</th>
+            <th>Mottled Leaf</th>
+            <th>Country</th>
+            <th>Latitude</th>
+            <th>Longitude</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.GenusName</td>
+                <td>@item.GenusPronunciation</td>
+                <td>@item.SpeciesName</td>
+                <td>@item.SpeciesPronunciation</td>
+                <td>@item.SpeciesNameMeaning</td>
+                <td>@item.Taxonomist</td>
+                <td>@item.MottledLeaf</td>
+                <td>@item.Country</td>
+                <td>@item.Latitude</td>
+                <td>@item.Longitude</td>
+            </tr>
+        }
+    </tbody>
+</table>
