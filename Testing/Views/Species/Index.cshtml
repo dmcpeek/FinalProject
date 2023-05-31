@@ -10,20 +10,35 @@
 </div>
 
 <table class="table">
-    <tr>        
+    <tr>
+        <!-- <th>Image Placeholder</th> -->
+        <th>Genus</th>
         <th>Species Name</th>
         <th>Pronunciation</th>
         <th>Meaning</th>
-        <th>Genus</th>
+        <th>Taxonomist</th>
+        <th>Discovered</th>
+        <td>Country</td>
+        <th>Latitude</th>
+        <th>Longitude</th>
+        <td>Mottled Leaf</td>
+
     </tr>
 
     @foreach (var species in @Model)
     {
         <tr>
+            <!-- Image Placeholder -->
+            <td>@species.GenusNames[@species.GenusID]</td>
             <td><a href=/Species/ViewSpecies/@species.SpeciesID>@species.SpeciesName</a></td>
             <td>@species.Pronunciation</td>
             <td>@species.Meaning</td>
-            <td>@species.GenusNames[@species.GenusID]</td>            
+            <td>@species.Taxonomist</td>
+            <td>@species.DiscoveryYear</td>
+            <td>@species.CountryOfOrigin</td>
+            <td>@species.Latitude</td>
+            <td>@species.Longitude</td>
+            <td>@species.MottledLeaf</td>
         </tr>
     }
 

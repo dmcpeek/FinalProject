@@ -9,20 +9,35 @@
     <tr>
         <!-- <th>Genus ID</th>, Show static GenusName -->
         <!-- <th>Species ID</th>, Just show clickable SpeciesName -->
+        <th>Genus</th>
         <th>Species ID</th>
         <th>Species Name</th>
         <th>Pronunciation</th>
         <th>Meaning</th>
-        <th>Genus</th>
+        <th>Taxonomist</th>
+        <th>Discovered</th>
+        <th>Country</th>
+        <th>Latitude</th>
+        <th>Longitude</th>
+        <!-- Image Placeholder -->
+        <!-- Image Name Placeholder -->
+
     </tr>
     <tr>
         <!-- <th>Genus ID</th>, Show static GenusName -->
         <!-- <th>Species ID</th>, Just show clickable SpeciesName -->
+        <td>@Model.GenusNames[Model.GenusID]</td>
         <td>@Model.SpeciesID</td>
         <td>@Model.SpeciesName</td>
         <td>@Model.Pronunciation</td>
         <td>@Model.Meaning</td>
-        <td>@Model.GenusNames[Model.GenusID]</td>
+        <td>@Model.Taxonomist</td>
+        <td>@Model.DiscoveryYear</td>
+        <td>@Model.CountryOfOrigin</td>
+        <td>@Model.Latitude</td>
+        <td>@Model.Longitude</td>
+        <!-- <td>@Model.Image</td> -->
+        <!-- <td>@Model.ImageName</td> -->
     </tr>
 </table>
 

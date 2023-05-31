@@ -25,15 +25,52 @@ namespace Testing
 
         public void UpdateSpecies(Species species)
         {
-            _conn.Execute("UPDATE species SET SpeciesName = @name, Pronunciation = @pronunciation, Meaning = @meaning WHERE SpeciesID = @id",
-             new { name = species.SpeciesName, pronunciation = species.Pronunciation, meaning = species.Meaning, id = species.SpeciesID });
+            _conn.Execute("UPDATE species SET " +
+                "SpeciesName = @name, " +
+                "Pronunciation = @pronunciation, " +
+                "Meaning = @meaning, " +
+                "Taxonomist = @taxonomist, " +
+                "DiscoveryYear = @year, " +
+                "CountryOfOrigin = @country, " +
+                "Latitude = @lat, " +
+                "Longitude = @lon " +
+                "WHERE SpeciesID = @id;",
+             new { name = species.SpeciesName, 
+                 pronunciation = species.Pronunciation, 
+                 meaning = species.Meaning,                  
+                 taxonomist = species.Taxonomist, 
+                 year = species.DiscoveryYear, 
+                 country = species.CountryOfOrigin, 
+                 lat = species.Latitude, 
+                 lon = species.Longitude,
+                 id = species.SpeciesID
+             }); 
 
         }
 
         public void InsertSpecies(Species speciesToInsert)
         {
-            _conn.Execute("INSERT INTO species (SpeciesName, Pronunciation, Meaning, GenusID) VALUES (@name, @pronunciation, @meaning, @genusID);",
-                new { name = speciesToInsert.SpeciesName, pronunciation = speciesToInsert.Pronunciation, meaning = speciesToInsert.Meaning, genusID = speciesToInsert.GenusID });
+            _conn.Execute("INSERT INTO species (" +
+                "GenusID, " +
+                "SpeciesName, " +
+                "Pronunciation, " +
+                "Meaning, " +
+                "Taxonomist, " +
+                "DiscoveryYear, " +
+                "CountryOfOrigin, " +
+                "Latitude, Longitude )" +
+                "VALUES (@genusID, @name, @pronunciation, @meaning, @taxonomist, @year, @country, @lat, @lon);",
+                new {
+                    genusID = speciesToInsert.GenusID, 
+                    name = speciesToInsert.SpeciesName,
+                    pronunciation = speciesToInsert.Pronunciation,
+                    meaning = speciesToInsert.Meaning, 
+                    taxonomist = speciesToInsert.Taxonomist, 
+                    year = speciesToInsert.DiscoveryYear, 
+                    country = speciesToInsert.CountryOfOrigin, 
+                    lat = speciesToInsert.Latitude, 
+                    lon = speciesToInsert.Longitude
+                });
         }
 
         public IEnumerable<Genus> GetGenus()
@@ -50,10 +87,10 @@ namespace Testing
 
         public void DeleteSpecies(Species species)
         {
-            _conn.Execute("DELETE FROM location WHERE SpeciesID = @id;", new { id = species.SpeciesID });
-            _conn.Execute("DELETE FROM description WHERE SpeciesID = @id;", new { id = species.SpeciesID });
+            // _conn.Execute("DELETE FROM location WHERE SpeciesID = @id;", new { id = species.SpeciesID });
+            // _conn.Execute("DELETE FROM description WHERE SpeciesID = @id;", new { id = species.SpeciesID });
             _conn.Execute("DELETE FROM species WHERE SpeciesID = @id;", new { id = species.SpeciesID });
-            _conn.Execute("DELETE FROM image WHERE SpeciesID = @id;", new { id = species.SpeciesID });
+            // _conn.Execute("DELETE FROM image WHERE SpeciesID = @id;", new { id = species.SpeciesID });
         }
 
         public Dictionary<int, string> PickGenusName()

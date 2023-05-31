@@ -15,5 +15,13 @@ namespace Testing.Models
         public string Meaning { get; set; }
         public IEnumerable<Genus> Genus { get; set; }
         public Dictionary<int,string> GenusNames { get; set; }
+        public string Taxonomist { get; set; }
+        public int DiscoveryYear { get; set; }
+        public bool MottledLeaf { get; set;}
+        public byte[] Image { get; set; }
+        public string ImageName { get; set; }
+        public string CountryOfOrigin { get; set; }
+        public decimal Latitude { get; set; }
+        public decimal Longitude { get; set; }
     }
 }
