@@ -3,6 +3,7 @@
     public class JoinedDataModel
     {
         public string Image { get; set; }
+        public string ImageName { get; set; }
         public string GenusName { get; set; }
         public string GenusPronunciation { get; set; }
         public string SpeciesName { get; set; }

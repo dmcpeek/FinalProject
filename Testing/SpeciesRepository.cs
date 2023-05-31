@@ -33,7 +33,9 @@ namespace Testing
                 "DiscoveryYear = @year, " +
                 "CountryOfOrigin = @country, " +
                 "Latitude = @lat, " +
-                "Longitude = @lon " +
+                "Longitude = @lon, " +
+                "ImageName = @imagename, " +
+                "MottledLeaf = @leaf " +
                 "WHERE SpeciesID = @id;",
              new { name = species.SpeciesName, 
                  pronunciation = species.Pronunciation, 
@@ -43,6 +45,8 @@ namespace Testing
                  country = species.CountryOfOrigin, 
                  lat = species.Latitude, 
                  lon = species.Longitude,
+                 imagename = species.ImageName,
+                 leaf = species.MottledLeaf,
                  id = species.SpeciesID
              }); 
 
@@ -58,8 +62,11 @@ namespace Testing
                 "Taxonomist, " +
                 "DiscoveryYear, " +
                 "CountryOfOrigin, " +
-                "Latitude, Longitude )" +
-                "VALUES (@genusID, @name, @pronunciation, @meaning, @taxonomist, @year, @country, @lat, @lon);",
+                "Latitude, " +
+                "Longitude, " +
+                "ImageName, " +
+                "MottledLeaf )" + 
+                "VALUES (@genusID, @name, @pronunciation, @meaning, @taxonomist, @year, @country, @lat, @lon, @imagename, @leaf);",
                 new {
                     genusID = speciesToInsert.GenusID, 
                     name = speciesToInsert.SpeciesName,
@@ -69,7 +76,9 @@ namespace Testing
                     year = speciesToInsert.DiscoveryYear, 
                     country = speciesToInsert.CountryOfOrigin, 
                     lat = speciesToInsert.Latitude, 
-                    lon = speciesToInsert.Longitude
+                    lon = speciesToInsert.Longitude,
+                    imagename = speciesToInsert.ImageName,
+                    leaf = speciesToInsert.MottledLeaf
                 });
         }
 

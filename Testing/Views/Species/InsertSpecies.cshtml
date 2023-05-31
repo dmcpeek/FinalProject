@@ -34,17 +34,20 @@
     <label asp-for="DiscoveryYear" class="control-label">Discovered</label>
     <input type="number" step="1" name="DiscoveryYear" class="form-control" />
 
+    <label asp-for="CountryOfOrigin" class="control-label">Country</label>
+    <input type="text" step="1" name="CountryOfOrigin" class="form-control" />
+
     // <label asp-for="Image" class="control-label">Image</label>
     // <input type="byte[]" name="Image" class="form-control" />
-
-    <label asp-for="ImageName" class="control-label">Image Name</label>
-    <input type="text" name="ImageName" class="form-control" />
 
     <label asp-for="Latitude" class="control-label">Latitude</label>
     <input type="number" step=".000001" name="Latitude" class="form-control" />
 
     <label asp-for="Longitude" class="control-label">Longitude</label>
     <input type="number" step=".000001" name="Longitude" class="form-control" />
+    
+    <label asp-for="ImageName" class="control-label">Filename</label>
+    <input type="text" name="ImageName" class="form-control" />
 
     <label asp-for="MottledLeaf" class="control-label">Mottled Leaf</label>
     <input type="checkbox" name="MottledLeaf" class="form-control" />

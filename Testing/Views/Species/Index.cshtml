@@ -18,10 +18,11 @@
         <th>Meaning</th>
         <th>Taxonomist</th>
         <th>Discovered</th>
-        <td>Country</td>
+        <th>Country</th>
         <th>Latitude</th>
         <th>Longitude</th>
-        <td>Mottled Leaf</td>
+        <th>Filename</th>
+        <th>Mottled Leaf</th>
 
     </tr>
 
@@ -29,6 +30,7 @@
     {
         <tr>
             <!-- Image Placeholder -->
+
             <td>@species.GenusNames[@species.GenusID]</td>
             <td><a href=/Species/ViewSpecies/@species.SpeciesID>@species.SpeciesName</a></td>
             <td>@species.Pronunciation</td>
@@ -38,6 +40,7 @@
             <td>@species.CountryOfOrigin</td>
             <td>@species.Latitude</td>
             <td>@species.Longitude</td>
+            <td>@species.ImageName</td>
             <td>@species.MottledLeaf</td>
         </tr>
     }
