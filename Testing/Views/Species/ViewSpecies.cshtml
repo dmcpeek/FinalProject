@@ -3,15 +3,12 @@
 *@
 @model Species
 
-<h3>@Model.SpeciesName Information</h3>
+<h3>View Orchid</h3>
 
 <table class="table">
     <tr>
-        <!-- <th>Genus ID</th>, Show static GenusName -->
-        <!-- <th>Species ID</th>, Just show clickable SpeciesName -->
         <th>Genus</th>
-        <th>Species ID</th>
-        <th>Species Name</th>
+        <th>Species</th>
         <th>Pronunciation</th>
         <th>Meaning</th>
         <th>Taxonomist</th>
@@ -19,16 +16,11 @@
         <th>Country</th>
         <th>Latitude</th>
         <th>Longitude</th>
-        <th>Filename</th>
-        <th>Mottled Leaf</th>
-        <!-- Image Placeholder -->
+        <th>Mottled</th>
 
     </tr>
     <tr>
-        <!-- <th>Genus ID</th>, Show static GenusName -->
-        <!-- <th>Species ID</th>, Just show clickable SpeciesName -->
         <td>@Model.GenusNames[Model.GenusID]</td>
-        <td>@Model.SpeciesID</td>
         <td>@Model.SpeciesName</td>
         <td>@Model.Pronunciation</td>
         <td>@Model.Meaning</td>
@@ -37,14 +29,12 @@
         <td>@Model.CountryOfOrigin</td>
         <td>@Model.Latitude</td>
         <td>@Model.Longitude</td>
-        <td>@Model.ImageName</td>
         <td>@Model.MottledLeaf</td>
-        <!-- <td>@Model.Image</td> -->
     </tr>
 </table>
 
 <div style="display: block">
-    <a href="/Species/UpdateSpecies/@Model.SpeciesID">Update this Species</a>
+    <a href="/Species/UpdateSpecies/@Model.SpeciesID">Update Orchid</a>
 </div>
 
 <div style="display: block">
