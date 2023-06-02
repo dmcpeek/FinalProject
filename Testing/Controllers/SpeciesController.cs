@@ -13,6 +13,7 @@ namespace Testing.Controllers
     public class SpeciesController : Controller
     {
         private readonly ISpeciesRepository repo;
+
         public SpeciesController(ISpeciesRepository repo)
         {
             this.repo = repo;
@@ -48,7 +49,6 @@ namespace Testing.Controllers
         public IActionResult UpdateSpeciesToDatabase(Species species)
         {
             repo.UpdateSpecies(species);
-
             return RedirectToAction("ViewSpecies", new { id = species.SpeciesID });
         }
 

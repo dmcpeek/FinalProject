@@ -3,7 +3,8 @@
 <table>
     <thead>
         <tr>
-            <!-- <th>image</th> -->
+
+            <th></th>
             <th>Genus Name</th>
             <th>Species Name</th>
             <th>Species Pronunciation</th>
@@ -20,6 +21,7 @@
         @foreach (var item in Model)
         {
             <tr>
+                <td><img src="data:image;base64,@item.ImageBase64" alt="Species Image" width="100" height="100" /></td>
                 <td>@item.GenusName</td>
                 <td>@item.SpeciesName</td>
                 <td>@item.SpeciesPronunciation</td>
