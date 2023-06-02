@@ -3,7 +3,7 @@
 <table>
     <thead>
         <tr>
-            <!-- <th>image</th> -->
+            <th>Image</th>
             <th>Genus Name</th>
             <th>Species Name</th>
             <th>Species Pronunciation</th>
@@ -20,6 +20,9 @@
         @foreach (var item in Model)
         {
             <tr>
+                <td>
+                    <img src="@Url.Action("GetImage", "Species", new { id = item.SpeciesID })" alt="Image" style="max-width: 100px; max-height: 100px;" />
+                </td>
                 <td>@item.GenusName</td>
                 <td>@item.SpeciesName</td>
                 <td>@item.SpeciesPronunciation</td>

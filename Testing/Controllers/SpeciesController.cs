@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -13,6 +12,7 @@ namespace Testing.Controllers
     public class SpeciesController : Controller
     {
         private readonly ISpeciesRepository repo;
+
         public SpeciesController(ISpeciesRepository repo)
         {
             this.repo = repo;
@@ -37,19 +37,23 @@ namespace Testing.Controllers
 
         public IActionResult UpdateSpecies(int id)
         {
-            Species prod = repo.GetSpecies(id);
-            if (prod == null)
+            Species species = repo.GetSpecies(id);
+            if (species == null)
             {
                 return View("SpeciesNotFound");
             }
-            return View(prod);
+            return View(species);
         }
 
-        public IActionResult UpdateSpeciesToDatabase(Species species)
+        [HttpPost]
+        public IActionResult UpdateSpecies(Species species)
         {
-            repo.UpdateSpecies(species);
-
-            return RedirectToAction("ViewSpecies", new { id = species.SpeciesID });
+            if (ModelState.IsValid)
+            {
+                repo.UpdateSpecies(species);
+                return RedirectToAction("ViewSpecies", new { id = species.SpeciesID });
+            }
+            return View(species);
         }
 
         public IActionResult InsertSpecies()
@@ -58,16 +62,43 @@ namespace Testing.Controllers
             return View(spec);
         }
 
-        public IActionResult InsertSpeciesToDatabase(Species speciesToInsert)
+        [HttpPost]
+        public IActionResult InsertSpecies(Species speciesToInsert)
         {
-            repo.InsertSpecies(speciesToInsert);
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                repo.InsertSpecies(speciesToInsert);
+                return RedirectToAction("Index");
+            }
+            return View(speciesToInsert);
         }
 
-        public IActionResult DeleteSpecies(Species species)
+        public IActionResult DeleteSpecies(int id)
         {
+            var species = repo.GetSpecies(id);
+            if (species == null)
+            {
+                return View("SpeciesNotFound");
+            }
             repo.DeleteSpecies(species);
             return RedirectToAction("Index");
         }
+
+        public IActionResult GetImage(int id)
+        {
+            var species = repo.GetSpecies(id);
+            if (species != null && species.Image != null)
+            {
+                return File(species.Image, "image/jpeg");
+            }
+            return NotFound();
+        }
     }
 }
+
+
+        //public IActionResult GetImage(int id)
+        //{
+        //    var species = repo.GetSpecies(id);
+        //    return File(species.Image, "image/jpeg");
+        //}

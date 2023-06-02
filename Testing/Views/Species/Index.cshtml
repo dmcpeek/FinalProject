@@ -1,17 +1,18 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@model IEnumerable<Species>
+﻿@model IEnumerable<Species>
 
 <h2>Species</h2>
 
-<div style="display: block">
-    <a href="/Species/InsertSpecies/">Add a New Species</a>
+@*<div style="display: block">
+    <a href="/Species/InsertSpecies/">Add Orchid</a>
+</div>*@
+
+<div class="button-wrapper">
+    <a href="/Species/InsertSpecies/" class="btn btn-primary">Add Orchid</a>
 </div>
 
 <table class="table">
     <tr>
-        <!-- <th>Image Placeholder</th> -->
+        <th></th>
         <th>Genus</th>
         <th>Species Name</th>
         <th>Pronunciation</th>
@@ -21,18 +22,15 @@
         <th>Country</th>
         <th>Latitude</th>
         <th>Longitude</th>
-        <th>Filename</th>
         <th>Mottled Leaf</th>
-
     </tr>
 
-    @foreach (var species in @Model)
+    @foreach (var species in Model)
     {
         <tr>
-            <!-- Image Placeholder -->
-
-            <td>@species.GenusNames[@species.GenusID]</td>
-            <td><a href=/Species/ViewSpecies/@species.SpeciesID>@species.SpeciesName</a></td>
+            <td><img src="@Url.Action("GetImage", "Species", new { id = species.SpeciesID })" alt="Species Image" class="orchid-image" /></td>
+            <td>@species.GenusNames[species.GenusID]</td>
+            <td><a href="@Url.Action("ViewSpecies", "Species", new { id = species.SpeciesID })">@species.SpeciesName</a></td>
             <td>@species.Pronunciation</td>
             <td>@species.Meaning</td>
             <td>@species.Taxonomist</td>
@@ -40,9 +38,7 @@
             <td>@species.CountryOfOrigin</td>
             <td>@species.Latitude</td>
             <td>@species.Longitude</td>
-            <td>@species.ImageName</td>
             <td>@species.MottledLeaf</td>
         </tr>
     }
-
 </table>
