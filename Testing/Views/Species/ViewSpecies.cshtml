@@ -33,19 +33,6 @@
     </tr>
 </table>
 
-@*<div style="display: block">
-    <a href="/Species/UpdateSpecies/@Model.SpeciesID">Update Orchid</a>
-</div>
-
-<div style="display: block">
-
-    @using (Html.BeginForm("DeleteSpecies", "Species", "Post"))
-    {
-        <input type="hidden" asp-for="SpeciesID" value="@Model.SpeciesID" />
-        <input type="submit" onclick="return confirm('Are you sure?')" value="Delete this species" />
-    }
-</div>*@
-
 <div class="button-group">
         <a href="/Species/UpdateSpecies/@Model.SpeciesID" class="btn btn-primary">Update Orchid</a>
         @using (Html.BeginForm("DeleteSpecies", "Species", "Post"))

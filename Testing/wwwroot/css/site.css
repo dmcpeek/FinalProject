@@ -84,3 +84,11 @@ img {
     display: flex;
     gap: 10px;
 }
+
+.checkbox-inline {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 100px;
+}
