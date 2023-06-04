@@ -7,6 +7,7 @@ using Dapper;
 using Microsoft.AspNetCore.Mvc;
 using MySql.Data.MySqlClient;
 using Testing.Models;
+using System.IO;
 
 namespace Testing.Controllers
 {
@@ -70,14 +71,30 @@ namespace Testing.Controllers
             return RedirectToAction("Index");
         }
 
+        //public IActionResult GetImage(int id)
+        //{
+        //    var species = repo.GetSpecies(id);
+        //    if (species != null && species.Image != null)
+        //    {
+        //        return File(species.Image, "image/jpeg");
+        //    }
+        //    return NotFound();
+
+        //}
+
         public IActionResult GetImage(int id)
         {
             var species = repo.GetSpecies(id);
             if (species != null && species.Image != null)
             {
-                return File(species.Image, "image/jpeg");
-    }
+                // Set the appropriate content type based on the image format
+                string contentType = "image/jpeg"; // Modify if your images are in a different format
+
+                // Return the image as a file
+                return File(species.Image, contentType);
+            }
             return NotFound();
-}
+        }
+
     }
 }
