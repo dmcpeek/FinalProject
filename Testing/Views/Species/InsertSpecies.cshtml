@@ -3,7 +3,7 @@
 *@
 @model Species
 
-<h2>Add a New Species</h2>
+<h4>Add Orchid</h4>
 
 @using (Html.BeginForm("InsertSpeciesToDatabase", "Species", "Post"))
 {
@@ -19,7 +19,7 @@
     
     <input asp-for="SpeciesID" type="hidden" value="" />
 
-    <label asp-for="SpeciesName" class="control-label">Species Name</label>
+    <label asp-for="SpeciesName" class="control-label">Species</label>
     <input type="text" name="SpeciesName" class="form-control" value="" />
 
     <label asp-for="Pronunciation" class="control-label">Pronunciation</label>
@@ -45,12 +45,18 @@
 
     <label asp-for="Longitude" class="control-label">Longitude</label>
     <input type="number" step=".000001" name="Longitude" class="form-control" />
-    
-    <label asp-for="ImageName" class="control-label">Filename</label>
-    <input type="text" name="ImageName" class="form-control" />
 
+<<<<<<< HEAD
     <label asp-for="MottledLeaf" class="control-label">Mottled Leaf</label>
     <input type="checkbox" name="MottledLeaf" class="form-control mottled-leaf-element" />
     <br>
     <input type="submit" value="Add Species" class="btn btn-primary" />
+=======
+@*    <input type="submit" value="Add Orchid" class="btn btn-primary" />*@
+
+    <div class="button-group">
+        <input type="submit" value="Add Orchid" class="btn btn-primary" />
+        <a href="/Species" class="btn btn-secondary">Cancel</a>
+    </div>
+>>>>>>> ImageData1
 }

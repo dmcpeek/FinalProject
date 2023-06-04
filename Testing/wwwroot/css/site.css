@@ -70,6 +70,7 @@ body {
   line-height: 60px; /* Vertically center the text there */
 }
 
+<<<<<<< HEAD
 .orchid-image{
     width: 200px;
     height: 200px;
@@ -85,4 +86,34 @@ body {
     align-items: center;
     justify-content: center;
 
+=======
+tr.clickable-row {
+    cursor: pointer;
+    background-color: lightgrey;
+}
+
+img {
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 200px;
+    height:200px;
+}
+
+.button-group {
+    padding-top: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.checkbox-inline {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 100px;
+}
+
+.scientific-name-style{
+    font-style:italic;
+>>>>>>> ImageData1
 }

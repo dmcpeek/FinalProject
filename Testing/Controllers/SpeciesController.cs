@@ -90,9 +90,15 @@ namespace Testing.Controllers
             if (species != null && species.Image != null)
             {
                 return File(species.Image, "image/jpeg");
+<<<<<<< HEAD
             }
             return NotFound();
         }
+=======
+    }
+            return NotFound();
+}
+>>>>>>> ImageData1
     }
 }
 
