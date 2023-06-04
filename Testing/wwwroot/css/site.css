@@ -78,9 +78,12 @@ tr.clickable-row {
 img {
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 200px;
+    height:200px;
 }
 
 .button-group {
+    padding-top: 10px;
     display: flex;
     gap: 10px;
 }
@@ -91,4 +94,8 @@ img {
     display: inline-block;
     vertical-align: middle;
     margin-right: 100px;
+}
+
+.scientific-name-style{
+    font-style:italic;
 }

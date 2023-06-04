@@ -69,5 +69,15 @@ namespace Testing.Controllers
             repo.DeleteSpecies(species);
             return RedirectToAction("Index");
         }
+
+        public IActionResult GetImage(int id)
+        {
+            var species = repo.GetSpecies(id);
+            if (species != null && species.Image != null)
+            {
+                return File(species.Image, "image/jpeg");
+    }
+            return NotFound();
+}
     }
 }

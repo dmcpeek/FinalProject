@@ -23,7 +23,6 @@
             <th>Country</th>
             <th>Latitude</th>
             <th>Longitude</th>
-            <th>Mottled</th>
         </tr>
     </thead>
     <tbody>
@@ -31,8 +30,10 @@
         {
             <tr class="clickable-row" data-url="@Url.Action("ViewSpecies", "Species", new { id = species.SpeciesID })">
                 <td><img src="@Url.Action("GetImage", "Species", new { id = species.SpeciesID })" alt="Species Image" class="orchid-image" /></td>
-                <td>@species.GenusNames[species.GenusID]</td>
-                <td>@species.SpeciesName</td>
+                <td style="scientific-name-style; font-style: italic;">@species.GenusNames[species.GenusID]</td>
+                @*<td style="scientific-name-style font-style: italic;">@species.SpeciesName</td>*@
+                <td style="scientific-name-style; font-style: italic;">@species.SpeciesName</td>
+
                 <td>@species.Pronunciation</td>
                 <td>@species.Meaning</td>
                 <td>@species.Taxonomist</td>
@@ -40,7 +41,6 @@
                 <td>@species.CountryOfOrigin</td>
                 <td>@species.Latitude</td>
                 <td>@species.Longitude</td>
-                <td>@species.MottledLeaf</td>
             </tr>
         }
     </tbody>
