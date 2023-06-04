@@ -70,7 +70,7 @@ body {
   line-height: 60px; /* Vertically center the text there */
 }
 
-tr.clickable-row {
+.clickable-row {
     cursor: pointer;
     background-color: lightgrey;
 }
@@ -83,7 +83,7 @@ img {
 }
 
 .button-group {
-    padding-top: 10px;
+    padding-top: 20px;
     display: flex;
     gap: 10px;
 }
