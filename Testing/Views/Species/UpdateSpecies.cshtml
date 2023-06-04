@@ -8,7 +8,7 @@
     <input asp-for="SpeciesID" type="hidden" value="@Model.SpeciesID" />
 
     <label asp-for="SpeciesName" class="control-label">Species Name</label>
-    <input type="text" name="SpeciesName" class="form-control" value="@Model.SpeciesName" />
+    <input type="text" name="SpeciesName" class="form-control scientific-name-style" value="@Model.SpeciesName" />
 
     <label asp-for="Pronunciation" class="control-label">Pronunciation</label>
     <input type="text" name="Pronunciation" class="form-control" value="@Model.Pronunciation" />
@@ -41,5 +41,10 @@
     <input type="checkbox" name="MottledLeaf" class="form-control checkbox-inline" value="@Model.MottledLeaf" />*@
 
     
-    <input type="submit" value="Update Species" class="btn btn-primary" />
+    @*<input type="submit" value="Update Species" class="btn btn-primary" />*@
+
+    <div class="button-group">
+        <input type="submit" value="Update Orchid" class="btn btn-primary" />
+        <a href="/Species" class="btn btn-secondary">Cancel</a>
+    </div>
 }
