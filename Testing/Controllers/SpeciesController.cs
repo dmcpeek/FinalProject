@@ -36,6 +36,16 @@ namespace Testing.Controllers
             return View(species);
         }
 
+        //public IActionResult UpdateSpecies(int id)
+        //{
+        //    Species species = repo.GetSpecies(id);
+        //    if (species == null)
+        //    {
+        //        return View("SpeciesNotFound");
+        //    }
+        //    return View(species);
+        //}
+
         public IActionResult UpdateSpecies(int id)
         {
             Species species = repo.GetSpecies(id);
@@ -43,8 +53,10 @@ namespace Testing.Controllers
             {
                 return View("SpeciesNotFound");
             }
+            species.GenusNames = repo.PickGenusName();
             return View(species);
         }
+
 
         public IActionResult UpdateSpeciesToDatabase(Species species)
         {

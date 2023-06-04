@@ -7,6 +7,18 @@
 {
     <input asp-for="SpeciesID" type="hidden" value="@Model.SpeciesID" />
 
+    <div class="form-group">
+       <label for="GenusID">Genus:</label>
+        <select id="GenusID" name="GenusID" class="form-control scientific-name-style">
+           @foreach (var genus in Model.GenusNames)
+           {
+                <option value="@genus.Key" selected="@(genus.Key.ToString() == Model.GenusID.ToString() ? "selected" : null)">
+                    <span style="font-style: italic;">@Html.Raw(genus.Value)</span>
+                </option>
+            }
+       </select>
+    </div>
+
     <label asp-for="SpeciesName" class="control-label">Species Name</label>
     <input type="text" name="SpeciesName" class="form-control scientific-name-style" value="@Model.SpeciesName" />
 
@@ -45,6 +57,6 @@
 
     <div class="button-group">
         <input type="submit" value="Update Orchid" class="btn btn-primary" />
-        <a href="/Species" class="btn btn-secondary">Cancel</a>
+        <a href="/Species" class="btn btn-secondary">Back to List</a>
     </div>
 }

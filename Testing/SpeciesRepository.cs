@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using Testing.Models;
 
 namespace Testing

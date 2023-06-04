@@ -4,6 +4,5 @@
     {
         public int GenusID { get; set; }
         public string GenusName { get; set; }
-        public string SpeciesID { get; set; }
     }
 }
