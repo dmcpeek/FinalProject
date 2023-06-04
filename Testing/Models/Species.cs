@@ -23,5 +23,6 @@ namespace Testing.Models
         public string CountryOfOrigin { get; set; }
         public decimal Latitude { get; set; }
         public decimal Longitude { get; set; }
+        public string ImageBase64 { get; set; }
     }
 }

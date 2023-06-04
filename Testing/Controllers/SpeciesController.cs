@@ -48,12 +48,17 @@ namespace Testing.Controllers
         [HttpPost]
         public IActionResult UpdateSpecies(Species species)
         {
+<<<<<<< HEAD
             if (ModelState.IsValid)
             {
                 repo.UpdateSpecies(species);
                 return RedirectToAction("ViewSpecies", new { id = species.SpeciesID });
             }
             return View(species);
+=======
+            repo.UpdateSpecies(species);
+            return RedirectToAction("ViewSpecies", new { id = species.SpeciesID });
+>>>>>>> 4e3fad0a6267a2a5b2b5017802810497202d550a
         }
 
         public IActionResult InsertSpecies()
@@ -96,6 +101,7 @@ namespace Testing.Controllers
         }
 =======
     }
+<<<<<<< HEAD
             return NotFound();
 }
 >>>>>>> ImageData1
@@ -108,3 +114,6 @@ namespace Testing.Controllers
         //    var species = repo.GetSpecies(id);
         //    return File(species.Image, "image/jpeg");
         //}
+=======
+}
+>>>>>>> 4e3fad0a6267a2a5b2b5017802810497202d550a

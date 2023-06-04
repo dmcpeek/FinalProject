@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ﻿@model IEnumerable<Species>
+=======
+﻿@*@model IEnumerable<Species>
+>>>>>>> 4e3fad0a6267a2a5b2b5017802810497202d550a
 
 @{
     ViewData["Title"] = "Species";
@@ -35,9 +39,60 @@
     @foreach (var species in Model)
     {
         <tr>
+<<<<<<< HEAD
             <td><img src="@Url.Action("GetImage", "Species", new { id = species.SpeciesID })" alt="Species Image" class="orchid-image" /></td>
             <td>@species.GenusNames[species.GenusID]</td>
             <td><a href="@Url.Action("ViewSpecies", "Species", new { id = species.SpeciesID })">@species.SpeciesName</a></td>
+=======
+
+            <td>@species.GenusNames[@species.GenusID]</td>
+            <td><a href="/Species/ViewSpecies/@species.SpeciesID">@species.SpeciesName</a></td>
+            <td>@species.Pronunciation</td>
+            <td>@species.Meaning</td>
+            <td>@species.Taxonomist</td>
+            <td>@species.DiscoveryYear</td>
+            <td>@species.CountryOfOrigin</td>
+            <td>@species.Latitude</td>
+            <td>@species.Longitude</td>
+            <td>@species.ImageName</td>
+            <td>@species.MottledLeaf</td>
+        </tr>
+    }
+
+</table>
+*@
+
+@model IEnumerable<Species>
+
+<h2>Species</h2>
+
+<div style="display: block">
+    <a href="/Species/InsertSpecies/">Add a New Species</a>
+</div>
+
+<table class="table">
+    <tr>
+        <th></th>
+        <th>Genus</th>
+        <th>Species Name</th>
+        <th>Pronunciation</th>
+        <th>Meaning</th>
+        <th>Taxonomist</th>
+        <th>Discovered</th>
+        <th>Country</th>
+        <th>Latitude</th>
+        <th>Longitude</th>
+        <th>Filename</th>
+        <th>Mottled Leaf</th>
+    </tr>
+
+    @foreach (var species in Model)
+    {
+        <tr>
+            <td><img src="data:image;base64,@species.ImageBase64" alt="Species Image" width="100" height="100" /></td>
+            <td>@species.GenusNames[@species.GenusID]</td>
+            <td><a href="/Species/ViewSpecies/@species.SpeciesID">@species.SpeciesName</a></td>
+>>>>>>> 4e3fad0a6267a2a5b2b5017802810497202d550a
             <td>@species.Pronunciation</td>
             <td>@species.Meaning</td>
             <td>@species.Taxonomist</td>

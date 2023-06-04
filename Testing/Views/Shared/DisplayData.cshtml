@@ -3,7 +3,12 @@
 <table>
     <thead>
         <tr>
+<<<<<<< HEAD
             <th>Image</th>
+=======
+
+            <th></th>
+>>>>>>> 4e3fad0a6267a2a5b2b5017802810497202d550a
             <th>Genus Name</th>
             <th>Species Name</th>
             <th>Species Pronunciation</th>
@@ -20,10 +25,14 @@
         @foreach (var item in Model)
         {
             <tr>
+<<<<<<< HEAD
                 <td>
                     <img src="@Url.Action("GetImage", "Species", new { id = item.SpeciesID })" alt="Image" style="max-width: 100px; max-height: 100px;" />
                 </td>
 <<<<<<< HEAD
+=======
+                <td><img src="data:image;base64,@item.ImageBase64" alt="Species Image" width="100" height="100" /></td>
+>>>>>>> 4e3fad0a6267a2a5b2b5017802810497202d550a
                 <td>@item.GenusName</td>
 =======
 >>>>>>> ImageData1

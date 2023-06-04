@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using Testing.Models;
@@ -15,7 +16,19 @@ namespace Testing
 
         public IEnumerable<Species> GetAllSpecies()
         {
-            return _conn.Query<Species>("SELECT * FROM species;");
+            var speciesList = _conn.Query<Species>("SELECT * FROM species;");
+            foreach (var species in speciesList)
+            {
+                if (species.Image != null && species.Image.Length > 0)
+                {
+                    species.ImageBase64 = Convert.ToBase64String(species.Image);
+                }
+            }
+            return speciesList;
+        }
+        private string ConvertToBase64(byte[] image)
+        {
+            return image != null ? $"data:image;base64,{Convert.ToBase64String(image)}" : string.Empty;
         }
 
         public Species GetSpecies(int id)
@@ -112,5 +125,7 @@ namespace Testing
             }
             return res;
         }
+
+
     }
 }
