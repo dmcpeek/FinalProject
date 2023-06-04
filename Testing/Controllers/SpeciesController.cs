@@ -37,12 +37,12 @@ namespace Testing.Controllers
 
         public IActionResult UpdateSpecies(int id)
         {
-            Species prod = repo.GetSpecies(id);
-            if (prod == null)
+            Species species = repo.GetSpecies(id);
+            if (species == null)
             {
                 return View("SpeciesNotFound");
             }
-            return View(prod);
+            return View(species);
         }
 
         public IActionResult UpdateSpeciesToDatabase(Species species)
