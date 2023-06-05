@@ -4,8 +4,8 @@
     <thead>
         <tr>
             <!-- <th>image</th> -->
-            <th>Genus Name</th>
-            <th>Species Name</th>
+@*            <th>Genus Name</th>
+            <th>Species Name</th>*@
             <th>Species Pronunciation</th>
             <th>Species Name Meaning</th>
             <th>Taxonomist</th>
@@ -23,7 +23,7 @@
                 <td>
                     <img src="@Url.Action("GetImage", "Species", new { id = item.SpeciesID })" alt="Image" style="max-width: 100px; max-height: 100px;" />
                 </td>
-                <td>@item.SpeciesName</td>
+@*                <td>@item.SpeciesName</td>*@
                 <td>@item.SpeciesPronunciation</td>
                 <td>@item.SpeciesNameMeaning</td>
                 <td>@item.Taxonomist</td>

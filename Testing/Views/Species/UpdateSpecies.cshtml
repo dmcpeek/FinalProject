@@ -7,7 +7,7 @@
 {
     <input asp-for="SpeciesID" type="hidden" value="@Model.SpeciesID" />
 
-    <div class="form-group">
+@*    <div class="form-group">
        <label for="GenusID">Genus:</label>
         <select id="GenusID" name="GenusID" class="form-control scientific-name-style">
            @foreach (var genus in Model.GenusNames)
@@ -17,7 +17,7 @@
                 </option>
             }
        </select>
-    </div>
+    </div>*@
 
     <label asp-for="SpeciesName" class="control-label">Species Name</label>
     <input type="text" name="SpeciesName" class="form-control scientific-name-style" value="@Model.SpeciesName" />

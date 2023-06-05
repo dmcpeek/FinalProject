@@ -4,7 +4,7 @@
 
 @using (Html.BeginForm("InsertSpeciesToDatabase", "Species", "Post"))
 {
-    <div class="form-group">
+@*    <div class="form-group">
         <label for="">Select a Genus</label>
         <select class="form-control" name="GenusID" value="">
             @foreach (var gen in Model.Genus)
@@ -12,7 +12,7 @@
                 <option value="@gen.GenusID">@gen.GenusName</option>
             }
         </select>
-    </div>
+    </div>*@
     
     <input asp-for="SpeciesID" type="hidden" value="" />
 
