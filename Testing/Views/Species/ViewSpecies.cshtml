@@ -17,7 +17,7 @@
     </tr>
     <tr>
         <td></td>
-        <td>@Model.SpeciesName</td>
+        <td style="font-style: italic;">@Model.SpeciesName</td>
         <td>@Model.Pronunciation</td>
         <td>@Model.Meaning</td>
         <td>@Model.Taxonomist</td>
@@ -35,5 +35,5 @@
             <input type="hidden" asp-for="SpeciesID" value="@Model.SpeciesID" />
             <input type="submit" onclick="return confirm('Are you sure?')" value="Delete Orchid" class="btn btn-danger" />
         }
-    <a href="/Species" class="btn btn-secondary">Cancel</a>
+    <a href="/Species" class="btn btn-secondary">Back to List</a>
 </div>

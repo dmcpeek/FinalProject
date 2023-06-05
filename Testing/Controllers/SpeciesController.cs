@@ -36,16 +36,6 @@ namespace Testing.Controllers
             return View(species);
         }
 
-        //public IActionResult UpdateSpecies(int id)
-        //{
-        //    Species species = repo.GetSpecies(id);
-        //    if (species == null)
-        //    {
-        //        return View("SpeciesNotFound");
-        //    }
-        //    return View(species);
-        //}
-
         public IActionResult UpdateSpecies(int id)
         {
             Species species = repo.GetSpecies(id);
@@ -83,26 +73,13 @@ namespace Testing.Controllers
             return RedirectToAction("Index");
         }
 
-        //public IActionResult GetImage(int id)
-        //{
-        //    var species = repo.GetSpecies(id);
-        //    if (species != null && species.Image != null)
-        //    {
-        //        return File(species.Image, "image/jpeg");
-        //    }
-        //    return NotFound();
-
-        //}
-
         public IActionResult GetImage(int id)
         {
             var species = repo.GetSpecies(id);
             if (species != null && species.Image != null)
             {
-                // Set the appropriate content type based on the image format
-                string contentType = "image/jpeg"; // Modify if your images are in a different format
+                string contentType = "image/jpeg";
 
-                // Return the image as a file
                 return File(species.Image, contentType);
             }
             return NotFound();

@@ -7,18 +7,6 @@
 {
     <input asp-for="SpeciesID" type="hidden" value="@Model.SpeciesID" />
 
-@*    <div class="form-group">
-       <label for="GenusID">Genus:</label>
-        <select id="GenusID" name="GenusID" class="form-control scientific-name-style">
-           @foreach (var genus in Model.GenusNames)
-           {
-                <option value="@genus.Key" selected="@(genus.Key.ToString() == Model.GenusID.ToString() ? "selected" : null)">
-                    <span style="font-style: italic;">@Html.Raw(genus.Value)</span>
-                </option>
-            }
-       </select>
-    </div>*@
-
     <label asp-for="SpeciesName" class="control-label">Species Name</label>
     <input type="text" name="SpeciesName" class="form-control scientific-name-style" value="@Model.SpeciesName" />
 
@@ -37,23 +25,11 @@
     <label asp-for="CountryOfOrigin" class="control-label">Country</label>
     <input type="text" name="CountryOfOrigin" class="form-control" value="@Model.CountryOfOrigin" />
 
-    //<label asp-for="Image" class="control-label">Image</label>
-    //<input type="byte[]" name="Image" class="form-control" value="@Model.Image"/>
-
     <label asp-for="Latitude" class="control-label">Latitude</label>
     <input type="number" step=".000001" name="Latitude" class="form-control" value="@Model.Latitude" />
 
     <label asp-for="Longitude" class="control-label">Longitude</label>
     <input type="number" step=".000001" name="Longitude" class="form-control" value="@Model.Longitude" />
-    
-@*    <label asp-for="ImageName" class="control-label">Image Name</label>
-    <input type="text" name="ImageName" class="form-control" value="@Model.ImageName" />*@
-
-@*    <label asp-for="MottledLeaf" class="control-label">Mottled Leaf</label>
-    <input type="checkbox" name="MottledLeaf" class="form-control checkbox-inline" value="@Model.MottledLeaf" />*@
-
-    
-    @*<input type="submit" value="Update Species" class="btn btn-primary" />*@
 
     <div class="button-group">
         <input type="submit" value="Update Orchid" class="btn btn-primary" />

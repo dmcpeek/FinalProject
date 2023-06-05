@@ -97,10 +97,7 @@ namespace Testing
 
         public void DeleteSpecies(Species species)
         {
-            // _conn.Execute("DELETE FROM location WHERE SpeciesID = @id;", new { id = species.SpeciesID });
-            // _conn.Execute("DELETE FROM description WHERE SpeciesID = @id;", new { id = species.SpeciesID });
             _conn.Execute("DELETE FROM species WHERE SpeciesID = @id;", new { id = species.SpeciesID });
-            // _conn.Execute("DELETE FROM image WHERE SpeciesID = @id;", new { id = species.SpeciesID });
         }
 
         public Dictionary<int, string> PickGenusName()

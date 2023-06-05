@@ -4,16 +4,6 @@
 
 @using (Html.BeginForm("InsertSpeciesToDatabase", "Species", "Post"))
 {
-@*    <div class="form-group">
-        <label for="">Select a Genus</label>
-        <select class="form-control" name="GenusID" value="">
-            @foreach (var gen in Model.Genus)
-            {
-                <option value="@gen.GenusID">@gen.GenusName</option>
-            }
-        </select>
-    </div>*@
-    
     <input asp-for="SpeciesID" type="hidden" value="" />
 
     <label asp-for="SpeciesName" class="control-label">Species</label>
@@ -39,8 +29,6 @@
 
     <label asp-for="Longitude" class="control-label">Longitude</label>
     <input type="number" step=".000001" name="Longitude" class="form-control" />
-
-@*    <input type="submit" value="Add Orchid" class="btn btn-primary" />*@
 
     <div class="button-group">
         <input type="submit" value="Add Orchid" class="btn btn-primary" />
